@@ -1,7 +1,4 @@
 
-% Written by Borja Petit, 2021.
-% Distributed under MIT license.
-
 \ProvidesClass{bppaper}[2021 Borja Petit, Template for papers]
 
 % Options:
@@ -42,21 +39,21 @@
 \LoadClass[a4paper]{article}
 
 \RequirePackage[utf8]{inputenc}
-\RequirePackage{geometry}				% Define the size of document
-\RequirePackage{enumitem}				% For formatting itemize and enumerate
-\RequirePackage{hyperref}				% For links and within-doc citations
-\RequirePackage[usenames,dvipsnames]{color}		% Define new colors
-\RequirePackage{titlesec}				% Customize section titles
-\RequirePackage{scrextend}				% Define footnotes' layout
-\RequirePackage{caption}				% Redefine figure/table captions format
-\RequirePackage{subcaption}				% Subfigures
-\RequirePackage{multirow}				% Srt multiple rows/columns in tables
-\RequirePackage[bottom]{footmisc}			% Make footnotes be located at the bottom.
+\RequirePackage{geometry}					% Define the size of document
+\RequirePackage{enumitem}					% For formatting itemize and enumerate
+\RequirePackage{hyperref}					% For links and within-doc citations
+\RequirePackage[usenames,dvipsnames]{color}	% Define new colors
+\RequirePackage{titlesec}						% Customize section titles
+\RequirePackage{scrextend}					% Define footnotes' layout
+\RequirePackage{caption}						% Redefine figure/table captions format
+\RequirePackage{subcaption}					% Subfigures
+\RequirePackage{multirow}					% Srt multiple rows/columns in tables
+\RequirePackage[bottom]{footmisc}				% Make footnotes be located at the bottom.
 \RequirePackage[authoryear]{natbib}			% For Bib references
-\RequirePackage{amssymb,amsmath,amsthm}			% Math expressions, symbols and theorems.
-\RequirePackage{graphicx}				% Include figures
-\RequirePackage{booktabs}				% Nice lines for tables
-\RequirePackage{setspace}				% Nice lines for tables
+\RequirePackage{amssymb,amsmath,amsthm}		% Math expressions, symbols and theorems.
+\RequirePackage{graphicx}					% Include figures
+\RequirePackage{booktabs}					% Nice lines for tables
+\RequirePackage{setspace}					% Nice lines for tables
 
 \ifdefined\tikz
 \RequirePackage{tikz}
