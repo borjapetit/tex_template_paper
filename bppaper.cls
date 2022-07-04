@@ -25,7 +25,7 @@
 \DeclareOption{iowa}{\def\fontiowa{1}}
 \DeclareOption{sans}{\def\fontsf{1}}
 \DeclareOption{helvetica}{\def\fonthelvet{1}}
-\DeclareOption{patalino}{\def\fontpala{1}}
+\DeclareOption{palatino}{\def\fontpala{1}}
 \DeclareOption{bookman}{\def\fontbookman{1}}
 \DeclareOption{termes}{\def\fonttermes{1}}
 \DeclareOption{adventor}{\def\fontadventor{1}}
