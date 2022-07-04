@@ -1,9 +1,11 @@
 # bppaper.cls
 
 
-This template is based on the ```article``` class. I redefine the title page, the page layout and few other aspects. I also include some new options, listed below. They work as any other option:
+This is a very simple template based on the ```article``` class, that redefines the title page, the page layout and few other aspects. It also includes some new options listed below, that work as any other:
 
   ```\documentclass[sans,blue,narrow]{bppaper}```
+
+The user can continue using any standard ```article``` class option.
 
 ### Font typefaces
 - Helvetica ( ```helvetica``` )
