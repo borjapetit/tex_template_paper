@@ -42,21 +42,21 @@
 \LoadClass[a4paper]{article}
 
 \RequirePackage[utf8]{inputenc}
-\RequirePackage{geometry}					% Define the size of document
-\RequirePackage{enumitem}					% For formatting itemize and enumerate
-\RequirePackage{hyperref}					% For links and within-doc citations
-\RequirePackage[usenames,dvipsnames]{color}	% Define new colors
-\RequirePackage{titlesec}						% Customize section titles
-\RequirePackage{scrextend}					% Define footnotes' layout
-\RequirePackage{caption}						% Redefine figure/table captions format
-\RequirePackage{subcaption}					% Subfigures
-\RequirePackage{multirow}					% Srt multiple rows/columns in tables
-\RequirePackage[bottom]{footmisc}				% Make footnotes be located at the bottom.
+\RequirePackage{geometry}				% Define the size of document
+\RequirePackage{enumitem}				% For formatting itemize and enumerate
+\RequirePackage{hyperref}				% For links and within-doc citations
+\RequirePackage[usenames,dvipsnames]{color}		% Define new colors
+\RequirePackage{titlesec}				% Customize section titles
+\RequirePackage{scrextend}				% Define footnotes' layout
+\RequirePackage{caption}				% Redefine figure/table captions format
+\RequirePackage{subcaption}				% Subfigures
+\RequirePackage{multirow}				% Srt multiple rows/columns in tables
+\RequirePackage[bottom]{footmisc}			% Make footnotes be located at the bottom.
 \RequirePackage[authoryear]{natbib}			% For Bib references
-\RequirePackage{amssymb,amsmath,amsthm}		% Math expressions, symbols and theorems.
-\RequirePackage{graphicx}					% Include figures
-\RequirePackage{booktabs}					% Nice lines for tables
-\RequirePackage{setspace}					% Nice lines for tables
+\RequirePackage{amssymb,amsmath,amsthm}			% Math expressions, symbols and theorems.
+\RequirePackage{graphicx}				% Include figures
+\RequirePackage{booktabs}				% Nice lines for tables
+\RequirePackage{setspace}				% Nice lines for tables
 
 \ifdefined\tikz
 \RequirePackage{tikz}
@@ -156,9 +156,9 @@
 \titleformat{\paragraph}[runin]{\color{main}\normalsize\bfseries}{\theparagraph}{}{}
 
 % Spacing
-\titlespacing*{\section}{0pt}{0.7cm}{0.5cm}
-\titlespacing*{\subsection}{0pt}{0.7cm}{0.4cm}
-\titlespacing*{\subsubsection}{0pt}{0.4cm}{0.2cm}
+\titlespacing*{\section}{0pt}{0.5cm}{0.5cm}
+\titlespacing*{\subsection}{0pt}{0.5cm}{0.4cm}
+\titlespacing*{\subsubsection}{0pt}{0.3cm}{0.2cm}
 \titlespacing*{\paragraph}{0pt}{0.3cm}{0.2cm}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
