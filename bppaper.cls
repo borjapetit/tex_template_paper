@@ -43,25 +43,27 @@
 \RequirePackage{enumitem}					% For formatting itemize and enumerate
 \RequirePackage{hyperref}					% For links and within-doc citations
 \RequirePackage[usenames,dvipsnames]{color}	% Define new colors
-\RequirePackage{titlesec}						% Customize section titles
+\RequirePackage{titlesec}					% Customize section titles
 \RequirePackage{scrextend}					% Define footnotes' layout
-\RequirePackage{caption}						% Redefine figure/table captions format
+\RequirePackage{caption}					% Redefine figure/table captions format
 \RequirePackage{subcaption}					% Subfigures
-\RequirePackage{multirow}					% Srt multiple rows/columns in tables
-\RequirePackage[bottom]{footmisc}				% Make footnotes be located at the bottom.
+\RequirePackage{multirow}					% Merge multiple rows/columns in tables
+\RequirePackage[bottom]{footmisc}			% Make footnotes be located at the bottom.
 \RequirePackage[authoryear]{natbib}			% For Bib references
 \RequirePackage{amssymb,amsmath,amsthm}		% Math expressions, symbols and theorems.
 \RequirePackage{graphicx}					% Include figures
 \RequirePackage{booktabs}					% Nice lines for tables
-\RequirePackage{setspace}					% Nice lines for tables
+\RequirePackage{setspace}					% Redefine spacing
+\RequirePackage{stackengine}                % 
+\RequirePackage{ulem}                       % Nice underline environment
 
 \ifdefined\tikz
-\RequirePackage{tikz}
-\usetikzlibrary{arrows}
-\usetikzlibrary{positioning}
-\usetikzlibrary{patterns}
-\usetikzlibrary{decorations.pathreplacing}
-\usetikzlibrary{decorations.pathmorphing}
+    \RequirePackage{tikz}
+    \usetikzlibrary{arrows}
+    \usetikzlibrary{positioning}
+    \usetikzlibrary{patterns}
+    \usetikzlibrary{decorations.pathreplacing}
+    \usetikzlibrary{decorations.pathmorphing}
 \else\relax\fi
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -285,7 +287,8 @@
 \newcommand{\hs}{\hspace{0.1cm}}
 \newcommand{\vs}{\vspace{0.1cm}}
 \newcommand{\so}{\ \ \ \Rightarrow \ \ \ }
-\newcommand{\under}[1]{\underline{\smash{#1}}}
+\newcommand{\llave}[2]{%
+\underbrace{ \addstackgap[4pt] {$#1$} }_{ {\footnotesize\text{#2}} } }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % THEOREMS
