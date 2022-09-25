@@ -43,19 +43,19 @@
 \RequirePackage{enumitem}					% For formatting itemize and enumerate
 \RequirePackage{hyperref}					% For links and within-doc citations
 \RequirePackage[usenames,dvipsnames]{color}	% Define new colors
-\RequirePackage{titlesec}					% Customize section titles
+\RequirePackage{titlesec}						% Customize section titles
 \RequirePackage{scrextend}					% Define footnotes' layout
-\RequirePackage{caption}					% Redefine figure/table captions format
+\RequirePackage{caption}						% Redefine figure/table captions format
 \RequirePackage{subcaption}					% Subfigures
 \RequirePackage{multirow}					% Merge multiple rows/columns in tables
-\RequirePackage[bottom]{footmisc}			% Make footnotes be located at the bottom.
+\RequirePackage[bottom]{footmisc}				% Make footnotes be located at the bottom.
 \RequirePackage[authoryear]{natbib}			% For Bib references
 \RequirePackage{amssymb,amsmath,amsthm}		% Math expressions, symbols and theorems.
 \RequirePackage{graphicx}					% Include figures
 \RequirePackage{booktabs}					% Nice lines for tables
 \RequirePackage{setspace}					% Redefine spacing
-\RequirePackage{stackengine}                % 
-\RequirePackage{ulem}                       % Nice underline environment
+\RequirePackage{stackengine}                			% 
+\RequirePackage{ulem}                       			% Nice underline environment
 
 \ifdefined\tikz
     \RequirePackage{tikz}
