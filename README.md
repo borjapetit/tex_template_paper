@@ -14,12 +14,12 @@ You can find an example here: [.tex file](https://github.com/borjapetit/tex_temp
 
 This template includes few new aspects to the default title page. In particular:
 
-- **Abstract**: the user can include an abstract using ```\abstract{ ... }``` in the preambule. 
-- **JEL codes**: the user can specify the JEL codes of the paper using ```\jel{ ... }``` in the preambule. This will show up below the abstract.
-- **Keywords**: the user can include some keywords to the title pagle using ```\keywords{ ... }``` in the preambule. This will show up below the abstract and the JEL codes (if defined).
-- **Acknowledgements**: the user can include a footnote int he title pagle with cknowledgements and other comments using ```\thanks{ ... }``` in the preambule.
+- **Abstract**: the user can include an abstract using ```\abstract{ ... }``` in the preamble.
+- **JEL codes**: the user can specify the JEL codes of the paper using ```\jel{ ... }``` in the preamble. This will show up below the abstract.
+- **Keywords**: the user can include some keywords to the title page using ```\keywords{ ... }``` in the preamble. This will show up below the abstract and the JEL codes (if defined).
+- **Acknowledgements**: the user can include a footnote in the title page with acknowledgements and other comments using ```\thanks{ ... }``` in the preamble.
 
-A "complete" preambule would be:
+A "complete" preamble would be:
 
 ```Latex
 \title{Title of the project}
@@ -63,11 +63,11 @@ The user can also define his/her own colors by writing the following commands in
 
 - ```\hs```: equivalent to ```\hspace{0.1cm}```
 - ```\vs```: equivalent to ```\vspace{0.1cm}```
-- ```\llave{a}{b}```: it draws a brace under ```a``` and siplays ```b```. Used for mathematical expressions.
+- ```\llave{a}{b}```: it draws a brace under ```a``` and displays ```b```. Used for mathematical expressions.
 
 ## Default packages
 
-In order to implement the moditications to the ```article`` class, this tempalte automatically loads the following packages:
+In order to implement the modifications to the ```article``` class, this template automatically loads the following packages:
 
 - ```inputenc```: packages to _tell_ LaTex what encoding is used. It loads ``utf8``.
 - ```geometry```: define the size of document.
