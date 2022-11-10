@@ -55,7 +55,7 @@ A "complete" preamble would be:
 
 - ```\hs```: equivalent to ```\hspace{0.1cm}``` (it can also be called as ```\hs{a}``` where ```a``` is the cm to be included in the ```\hspace{ }``` command)
 
-- ```\vs``` or ```\vs{a}```: equivalent to ```\vspace{0.1cm}```(it can also be called as ```\vs{a}``` where ```a``` is the cm to be included in the ```\vspace{ }``` command)
+- ```\vs```: equivalent to ```\vspace{0.1cm}``` (it can also be called as ```\vs{a}``` where ```a``` is the cm to be included in the ```\vspace{ }``` command)
 
 - ```\so```: equivalent to ```\hspace{0.5cm}\to\hspace{0.5cm}```
 

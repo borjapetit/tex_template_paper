@@ -79,14 +79,13 @@
 \ifdefined\fontpala
 	\RequirePackage{palatino} 
 	\renewcommand\familydefault{ppl}
-	\RequirePackage[lm]{sfmath}
+	\RequirePackage[italic]{mathastext}
 \else\relax\fi
 
 % Serif Pro
 \ifdefined\fontserif
 	\RequirePackage{sourceserifpro}
-	\RequirePackage{amsmath,amssymb,amsthm,eucal,bbold,bm}
-	\RequirePackage[italic,eulergreek]{mathastext}
+	\RequirePackage[italic]{mathastext}
 	\input{glyphtounicode}\pdfgentounicode=1
 \else\relax\fi
 
