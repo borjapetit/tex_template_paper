@@ -1,4 +1,4 @@
-# bppaper.cls: A LaTex template for academic papers.
+# bppaper.cls: A LaTex template for academic papers
 
 This template is based on the ```article``` class. I redefine the title page, the page layout and few other aspects. I also include some new options, listed below. They work as any other option:
 
@@ -12,7 +12,6 @@ You can find an example here: [.tex file](https://github.com/borjapetit/tex_temp
 
 ## Options
 
-
 Font typefaces:
 
 - Helvetica (option: ```helvetica```)
@@ -21,13 +20,16 @@ Font typefaces:
 - Serif Pro (option: ```serif```).
 
 Other options
+
 - Option ```color```: if this option is included, headings and captions will appear in blue and links/references in dark green. The user can also define his/her own colors by writing the following commands in the preamble:
+
     ```LaTex
     \definecolor{main}{RGB}{000,000,000}        % Headings and other elements
     \definecolor{colorref}{RGB}{000,000,220}    % Links/references
     ```
 
 - Option ```tikz```: the document loads the packages required to use the tikz environments. It automatically loads the libraries ```arrows```, ```positioning```, ```patterns```, ``decorations.pathreplacing`` and ```decorations.pathmorphing```.
+
 - Option ```narrow```: it increases the margin size from 2cm (default) to 3cm.
 
 ## Title page
@@ -58,7 +60,6 @@ A "complete" preamble would be:
 - ```\vs```: equivalent to ```\vspace{0.1cm}``` (it can also be called as ```\vs{a}``` where ```a``` is the cm to be included in the ```\vspace{ }``` command)
 
 - ```\so```: equivalent to ```\hspace{0.5cm}\to\hspace{0.5cm}```
-
 
 - ```\llave{a}{b}```: it draws a brace under ```a``` and displays ```b``` in math environment. Example
 
