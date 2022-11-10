@@ -1,62 +1,66 @@
 
 \ProvidesClass{bppaper}[2021 Borja Petit, Template for papers]
 
+% ----------- class options
+
+% page layout
 \DeclareOption{narrow}{\def\narrow{1}}
 
-\DeclareOption{iowa}{\def\fontiowa{1}}
+% font family
 \DeclareOption{sans}{\def\fontsf{1}}
+\DeclareOption{serif}{\def\fontserif{1}}
 \DeclareOption{helvetica}{\def\fonthelvet{1}}
 \DeclareOption{palatino}{\def\fontpala{1}}
-\DeclareOption{bookman}{\def\fontbookman{1}}
-\DeclareOption{termes}{\def\fonttermes{1}}
-\DeclareOption{adventor}{\def\fontadventor{1}}
 
-\DeclareOption{green}{\def\colorgreen{1}}
-\DeclareOption{red}{\def\colorred{1}}
-\DeclareOption{blue}{\def\colorblue{1}}
+% colors
+\DeclareOption{color}{\def\withcolors{1}}
 
+% other options
 \DeclareOption{tikz}{\def\tikz{1}}
 
 \DeclareOption*{\PassOptionsToClass{\CurrentOption}{article}}
 \ProcessOptions\relax
-
 \LoadClass[a4paper]{article}
 
 \RequirePackage[utf8]{inputenc}
-\RequirePackage{geometry}					% Define the size of document
 \RequirePackage{enumitem}					% For formatting itemize and enumerate
 \RequirePackage{hyperref}					% For links and within-doc citations
 \RequirePackage[usenames,dvipsnames]{color}	% Define new colors
 \RequirePackage{titlesec}					% Customize section titles
 \RequirePackage{scrextend}					% Define footnotes' layout
-\RequirePackage{caption}					% Redefine figure/table captions format
-\RequirePackage{subcaption}					% Subfigures
-\RequirePackage{multirow}					% Merge multiple rows/columns in tables
 \RequirePackage[bottom]{footmisc}			% Make footnotes be located at the bottom.
-\RequirePackage[authoryear]{natbib}			% For Bib references
+
 \RequirePackage{amssymb,amsmath,amsthm}		% Math expressions, symbols and theorems.
 \RequirePackage{graphicx}					% Include figures
 \RequirePackage{booktabs}					% Nice lines for tables
 \RequirePackage{setspace}					% Redefine spacing
 \RequirePackage{stackengine}                % 
-\RequirePackage{ulem}                       % Nice underline environment
+\RequirePackage[normalem]{ulem}                       % Nice underline environment
+\RequirePackage{eurosym}
 
-\ifdefined\tikz
-    \RequirePackage{tikz}
-    \usetikzlibrary{arrows}
-    \usetikzlibrary{positioning}
-    \usetikzlibrary{patterns}
-    \usetikzlibrary{decorations.pathreplacing}
-    \usetikzlibrary{decorations.pathmorphing}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% PAGE LAYOUT:
+
+\RequirePackage{geometry}  % Define the size of document
+
+% Size of the document:
+\geometry{top=2cm, bottom=2.5cm, right=2cm, left=2cm, footskip=1cm, footnotesep=0.4cm}
+\ifdefined\narrow
+	\geometry{top=3cm, bottom=3cm, right=3cm, left=3cm, footskip=1cm, footnotesep=0.4cm}
 \else\relax\fi
+
+% Line height
+\renewcommand{\baselinestretch}{1.5}
+
+% paragrpah spacing
+\setlength{\parindent}{20pt}
+\setlength{\parskip}{0.0cm}
+
+% Footnotes
+\deffootnote[1.8em]{1.8em}{0.0cm}{${\thefootnotemark}.$\enskip}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % FONT FAMILY:
-
-% Iowa font
-\ifdefined\fontiowa
-	\renewcommand*\rmdefault{iwona}
-\else\relax\fi
 
 % San-serif (default) font
 \ifdefined\fontsf
@@ -78,25 +82,13 @@
 	\RequirePackage[lm]{sfmath}
 \else\relax\fi
 
-% Palatino font
-\ifdefined\fontbookman
-	\RequirePackage{bookman} 
-	\renewcommand\familydefault{pbk}
+% Serif Pro
+\ifdefined\fontserif
+	\RequirePackage{sourceserifpro}
+	\RequirePackage{amsmath,amssymb,amsthm,eucal,bbold,bm}
+	\RequirePackage[italic,eulergreek]{mathastext}
+	\input{glyphtounicode}\pdfgentounicode=1
 \else\relax\fi
-
-% Termes font
-\ifdefined\fonttermes
-	\RequirePackage{tgtermes} 
-	\renewcommand\familydefault{qtm}
-\else\relax\fi
-
-% Adventor font
-\ifdefined\fontadventor
-	\RequirePackage{tgadventor} 
-	\renewcommand\familydefault{qag}
-	\RequirePackage{sfmath}
-\else\relax\fi
-
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % COLORS:
@@ -104,21 +96,9 @@
 \definecolor{main}{RGB}{000,000,000}
 \definecolor{colorref}{RGB}{000,000,220} 
 
-% Green:
-\ifdefined\colorgreen	
-	\definecolor{main}{RGB}{000,120,000}
-	\definecolor{colorref}{RGB}{000,000,220}
-\else\relax\fi
-
 % Blue:
-\ifdefined\colorblue
+\ifdefined\withcolors
 	\definecolor{main}{RGB}{000,000,180}
-	\definecolor{colorref}{RGB}{000,110,000}
-\else\relax\fi
-
-% Red:
-\ifdefined\colorred
-	\definecolor{main}{RGB}{180,000,000}
 	\definecolor{colorref}{RGB}{000,110,000}
 \else\relax\fi
 
@@ -131,12 +111,15 @@
 \def\thesection{{\arabic{section}}}
 \def\thesubsection{\thesection.\arabic{subsection}}
 \def\thesubsubsection{\thesubsection.\arabic{subsubsection}}
+\let\oldparagraph\paragraph
+\renewcommand{\paragraph}[1]{\oldparagraph{#1.}}
 
 % Font style
 \titleformat{\section}{\color{main}\Large\bfseries}{\thesection}{0.5em}{}
 \titleformat{\subsection}{\color{main}\large\bfseries}{\thesubsection}{0.5em}{}
 \titleformat{\subsubsection}{\color{main}\normalsize\bfseries}{\thesubsubsection}{0.5em}{}
 \titleformat{\paragraph}[runin]{\color{main}\normalsize\bfseries}{\theparagraph}{}{}
+
 
 % Spacing
 \titlespacing*{\section}{0pt}{0.5cm}{0.5cm}
@@ -145,43 +128,15 @@
 \titlespacing*{\paragraph}{0pt}{0.3cm}{0.2cm}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% PAGE LAYOUT:
+% TABLES AND FIGURES
 
-% Size of the document:
-\geometry{top=2cm, bottom=2.5cm, right=2cm, left=2cm, footskip=1cm, footnotesep=0.4cm}
-\ifdefined\narrow
-	\geometry{top=3cm, bottom=3cm, right=3cm, left=3cm, footskip=1cm, footnotesep=0.4cm}
-\else\relax\fi
-
-% Line height
-\renewcommand{\baselinestretch}{1.5}
-
-% paragrpah spacing
-\setlength{\parindent}{20pt}
-\setlength{\parskip}{0.0cm}
-
-% spansing between references items
-\setlength{\bibsep}{5pt}
-
-% Setting space below and above equations
-\makeatletter
-\g@addto@macro\normalsize{
-  \setlength\abovedisplayskip{13pt}
-  \setlength\belowdisplayskip{13pt}
-  \setlength\abovedisplayshortskip{13pt}
-  \setlength\belowdisplayshortskip{13pt}}
-\makeatother
-
-% Make the content of the page to appear in the very top
-\raggedbottom
-
-% Footnotes
-\deffootnote[1.8em]{1.8em}{0.0cm}{${\thefootnotemark}.$\enskip}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% FIGURES AND FIGURES
+% Packages
+\RequirePackage{multirow}		% Merge multiple rows/columns in tables
+\RequirePackage{caption}		% Redefine figure/table captions format
+\RequirePackage{subcaption} 	% Subfigures
 
 % Captions
+\captionsetup{labelsep=period}
 \captionsetup{labelfont={bf,color=main}}
 \captionsetup{justification=centering}
 \captionsetup{belowskip=8pt}
@@ -249,7 +204,7 @@
 		{\setlength{\parindent}{0pt}\thankyou}
 	\end{spacing}}
 	\vskip-0.5cm
-\else\fi}
+\else\vfill\fi\clearpage}
 \makeatother
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -266,41 +221,73 @@
 \def\labelitemiv{{\bfseries\color{main}$*$}}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% USEFULL COMMANDS
-
-\newcommand{\hs}{\hspace{0.1cm}}
-\newcommand{\vs}{\vspace{0.1cm}}
-\newcommand{\so}{\ \ \ \Rightarrow \ \ \ }
-\newcommand{\llave}[2]{%
-\underbrace{ \addstackgap[4pt] {$#1$} }_{ {\footnotesize\text{#2}} } }
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % THEOREMS
 
 % Change the format of theorems and similars:
-\newtheoremstyle{mytheoremstyle} 	% Name of the style
-    {0.4cm}                    		% Space above
-    {0.3cm}                    		% Space below
-    {\itshape}                   	% Body font
-    {0.0cm}                         % Indent amount
-    {\bfseries\color{main}}   		% Theorem head font
-    {.}                          	% Punctuation after theorem head
-    {.5em}                       	% Space after theorem head
-    {}  							% Theorem head spec (can be left empty, meaning "normal")
+\newtheoremstyle{mytheoremstyle}{0.4cm}{0.3cm}{\itshape}{0.0cm}{\bfseries\color{main}}{.}{.5em} {}  							% Theorem head spec (can be left empty, meaning "normal")
     
 % Set the theorem style to mine
 \theoremstyle{mytheoremstyle}
 
 % Defining new theorems
 \newtheorem{theorem}{Theorem}
-\newtheorem{corollary}{Corollary}
+\newtheorem{example}{Example}
 \newtheorem{assumption}{Assumption}
 \newtheorem*{definition}{Definition}
-\newtheorem{example}{Example}
-\newtheorem{lemma}{Lemma}
 \newtheorem{proposition}{Proposition}
-\newtheorem{hypothesis}{Hypothesis}
 
 % Define Proof enviroment:
 \renewcommand*{\proofname}{{\bfseries\upshape\color{main}Proof. }}
 \renewcommand{\qedsymbol}{\rule{0.5em}{0.5em}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% LOAD TIKZ LIBRARIES
+
+\ifdefined\tikz
+    \RequirePackage{tikz}
+    \usetikzlibrary{arrows}
+    \usetikzlibrary{positioning}
+    \usetikzlibrary{patterns}
+    \usetikzlibrary{decorations.pathreplacing}
+    \usetikzlibrary{decorations.pathmorphing}
+\else\relax\fi
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% USEFULL COMMANDS
+
+\newcommand{\hs}{\hspace{0.1cm}}
+\newcommand{\vs}{\vspace{0.1cm}}
+\newcommand{\so}{\ \ \ \ \to \ \ \ \ }
+\newcommand{\llave}[2]{\underbrace{\addstackgap[4pt]{$#1$}}_{{\footnotesize\text{#2}}}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% BIBLIOGRAPHY
+
+\AtBeginEnvironment{thebibliography}{\setstretch{1.1}}
+\RequirePackage[authoryear]{natbib}
+\setcitestyle{aysep={}}
+\setlength{\bibsep}{10pt}
+\setlength{\bibhang}{1.5em}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% APPENDDIX
+
+\AfterEndEnvironment{thebibliography}{
+
+	\appendix
+	
+	\let\oldsection\section
+	\renewcommand{\section}[1]{%
+		\setcounter{equation}{0}%
+		\setcounter{figure}{0}%
+		\setcounter{table}{0}%
+		\oldsection{#1.}}
+
+	\renewcommand{\thetable}{\Alph{section}.\arabic{table}}
+	\renewcommand{\thefigure}{\Alph{section}.\arabic{figure}}
+	\renewcommand{\theequation}{\Alph{section}.\arabic{equation}}
+	\renewcommand{\thesection}{\Alph{section}}
+
+	\titleformat{\section}{\color{main}\Large\bfseries}{Appendix~\thesection.}{0.5em}{}
+	
+}

@@ -10,6 +10,26 @@ You can find an example here: [.tex file](https://github.com/borjapetit/tex_temp
 
 **Note**: The user can still use any option compatible with the ```article``` class such as font size, etc.
 
+## Options
+
+
+Font typefaces:
+
+- Helvetica (option: ```helvetica```)
+- Sans-serif (option: ```sans```)
+- Palatino (option: ```palatino```)
+- Serif Pro (option: ```serif```).
+
+Other options
+- Option ```color```: if this option is included, headings and captions will appear in blue and links/references in dark green. The user can also define his/her own colors by writing the following commands in the preamble:
+    ```LaTex
+    \definecolor{main}{RGB}{000,000,000}        % Headings and other elements
+    \definecolor{colorref}{RGB}{000,000,220}    % Links/references
+    ```
+
+- Option ```tikz```: the document loads the packages required to use the tikz environments. It automatically loads the libraries ```arrows```, ```positioning```, ```patterns```, ``decorations.pathreplacing`` and ```decorations.pathmorphing```.
+- Option ```narrow```: it increases the margin size from 2cm (default) to 3cm.
+
 ## Title page
 
 This template includes few new aspects to the default title page. In particular:
@@ -31,39 +51,21 @@ A "complete" preamble would be:
 \thanks{I would like to thank....}
 ```
 
-## Font typefaces
-
-- Helvetica (option: ```helvetica```)
-- Sans-serif (option: ```sans```)
-- Iowa (option: ```iowa```)
-- Palatino (option: ```palatino```)
-- Bookman (option: ```bookman```)
-- Termes (option: ```termes```)
-- Adventor (option: ```adventor```).
-
-## Colors
-
-- Option ```green```: headings and captions in dark green, and links in blue.
-- Option ```red```:  headings and captions in dark red, and links in dark green.
-- Option ```blue```: headings and captions in blue, and links in dark green.
-
-The user can also define his/her own colors by writing the following commands in the preamble:
-
-```LaTex
-\definecolor{main}{RGB}{000,000,000}        % Headings and other elements
-\definecolor{colorref}{RGB}{000,000,220}    % Links/references
-```
-
-## Other options
-
-- Option ```tikz```: the document loads the packages required to use the tikz environments. It automatically loads the libraries ```arrows```, ```positioning```, ```patterns```, ``decorations.pathreplacing`` and ```decorations.pathmorphing```.
-- Option ```narrow```: it increases the margin size from 2cm (default) to 3cm.
-
 ## New commands
 
 - ```\hs```: equivalent to ```\hspace{0.1cm}```
+
 - ```\vs```: equivalent to ```\vspace{0.1cm}```
-- ```\llave{a}{b}```: it draws a brace under ```a``` and displays ```b```. Used for mathematical expressions.
+
+- ```\llave{a}{b}```: it draws a brace under ```a``` and displays ```b```. Used for mathematical expressions. Example
+
+    ```latex
+    \begin{equation}
+        \llave{ x = \dfrac{-b \pm \sqrt{b^2 - 4ac}}{2a} }{ Solution }
+    \end{equation}
+    ```
+
+- ```\uline{...}```: underline some text using the ```ulem``` package.
 
 ## Default packages
 
@@ -88,5 +90,7 @@ Other packages that are typically used are also loaded:
 - ```multirow```: to merge multiple rows/columns in tables.
 - ```graphicx```: to include figures.
 - ```subcaption```: to include subfigures.
-- ```ulem```: nocer underline enviroment.
+- ```ulem```: nicer underline enviroment.
 - ```stackengine```: to to stack/shift elements.
+
+
