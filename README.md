@@ -53,11 +53,14 @@ A "complete" preamble would be:
 
 ## New commands
 
-- ```\hs```: equivalent to ```\hspace{0.1cm}```
+- ```\hs```: equivalent to ```\hspace{0.1cm}``` (it can also be called as ```\hs{a}``` where ```a``` is the cm to be included in the ```\hspace{ }``` command)
 
-- ```\vs```: equivalent to ```\vspace{0.1cm}```
+- ```\vs``` or ```\vs{a}```: equivalent to ```\vspace{0.1cm}```(it can also be called as ```\vs{a}``` where ```a``` is the cm to be included in the ```\vspace{ }``` command)
 
-- ```\llave{a}{b}```: it draws a brace under ```a``` and displays ```b```. Used for mathematical expressions. Example
+- ```\so```: equivalent to ```\hspace{0.5cm}\to\hspace{0.5cm}```
+
+
+- ```\llave{a}{b}```: it draws a brace under ```a``` and displays ```b``` in math environment. Example
 
     ```latex
     \begin{equation}
@@ -71,26 +74,21 @@ A "complete" preamble would be:
 
 In order to implement the modifications to the ```article``` class, this template automatically loads the following packages:
 
-- ```inputenc```: packages to _tell_ LaTex what encoding is used. It loads ``utf8``.
-- ```geometry```: define the size of document.
-- ```enumitem```: for formatting ```itemize``` and ```enumerate``` environments.
-- ```hyperref```: for links and within-doc citations.
-- ```color```: define new colors. It loads the options ```usenames``` and ```dvipsnames```.
+- ```inputenc```: text encoding (loads option ``utf8``)
+- ```geometry```: redefine the size of document.
+- ```enumitem```: formatting ```itemize``` and ```enumerate``` environments.
+- ```hyperref```: links and within-doc citations.
+- ```color```: define new colors (loads options ```usenames``` and ```dvipsnames```).
 - ```titlesec```: customize section titles
-- ```scrextend```: used to redefine the layout of footnotes.
-- ```caption```: to customize figure/table captions.
-- ```footmisc```: force footnotes to be located at the bottom. It loads the option ```bottom```.
-- ```amssymb```, ```amsmath```, and ```amsthm```: for math expressions, symbols and theorems.
-- ```booktabs```: to have nice separation lines for tables.
-- ```setspace```: to change the line spacing within the document.
-
-Other packages that are typically used are also loaded:
-
-- ```natbib```: to manage .bib references. It loads the option ```authoryear```.
-- ```multirow```: to merge multiple rows/columns in tables.
-- ```graphicx```: to include figures.
-- ```subcaption```: to include subfigures.
+- ```scrextend```: redefine the layout of footnotes.
+- ```caption```: customize figure/table captions.
+- ```footmisc```: force footnotes to be located at the bottom (loads option ```bottom```).
+- ```amssymb```, ```amsmath```, ```amsthm```: math expressions, symbols and theorems.
+- ```booktabs```: nice separation lines for tables.
+- ```setspace```: change the line spacing within the document.
 - ```ulem```: nicer underline enviroment.
-- ```stackengine```: to to stack/shift elements.
-
-
+- ```stackengine```:  stack objects vertically (used for the ```\llave``` command).
+- ```natbib```: to manage .bib references (loads option ```authoryear```).
+- ```multirow```: merge multiple rows/columns in tables.
+- ```graphicx```: include figures.
+- ```subcaption```: include subfigures.

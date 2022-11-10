@@ -254,10 +254,10 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % USEFULL COMMANDS
-
-\newcommand{\hs}{\hspace{0.1cm}}
-\newcommand{\vs}{\vspace{0.1cm}}
-\newcommand{\so}{\ \ \ \ \to \ \ \ \ }
+\RequirePackage{xparse}
+\NewDocumentCommand{\hs}{g}{ \IfNoValueTF{#1}{\hspace{0.1cm}}{\hspace{{#1}cm}}}
+\NewDocumentCommand{\vs}{g}{ \IfNoValueTF{#1}{\vspace{0.1cm}}{\vspace{{#1}cm}}}
+\newcommand{\so}{ \hs{0.5} \to \hs{0.5} }
 \newcommand{\llave}[2]{\underbrace{\addstackgap[4pt]{$#1$}}_{{\footnotesize\text{#2}}}}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -275,7 +275,7 @@
 \AfterEndEnvironment{thebibliography}{
 
 	\appendix
-	
+
 	\let\oldsection\section
 	\renewcommand{\section}[1]{%
 		\setcounter{equation}{0}%
