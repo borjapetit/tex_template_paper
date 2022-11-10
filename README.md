@@ -72,8 +72,6 @@ A "complete" preamble would be:
 
 ## Default packages
 
-In order to implement the modifications to the ```article``` class, this template automatically loads the following packages:
-
 - ```inputenc```: text encoding (loads option ``utf8``)
 - ```geometry```: redefine the size of document.
 - ```enumitem```: formatting ```itemize``` and ```enumerate``` environments.
