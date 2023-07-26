@@ -3,10 +3,10 @@
 This template is based on the ```article``` class. I redefine the title page, the page layout and few other aspects. I also include some new options, listed below. They work as any other option:
 
 ```LaTex
-\documentclass[sans,blue,narrow]{bppaper}
+\documentclass[sans,color,narrow]{bppaper}
 ```
 
-You can find an example here: [.tex file](https://github.com/borjapetit/tex_template_paper/blob/main/bppaper_example.tex) and [.pdf file](https://github.com/borjapetit/tex_template_paper/blob/main/bppaper_example.pdf).
+You can find an example here: [.tex file](https://github.com/borjapetit/tex_template_paper/example/bppaper_example.tex) and [.pdf file](https://github.com/borjapetit/tex_template_paper/example/bppaper_example.pdf).
 
 **Note**: The user can still use any option compatible with the ```article``` class such as font size, etc.
 
