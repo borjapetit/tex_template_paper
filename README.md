@@ -1,3 +1,4 @@
+
 # bppaper.cls: A LaTex template for academic papers
 
 This template is based on the ```article``` class. I redefine the title page, the page layout and few other aspects. I also include some new options, listed below. They work as any other option:
@@ -9,6 +10,8 @@ This template is based on the ```article``` class. I redefine the title page, th
 You can find an example here: [.tex file](example/example.tex) and [.pdf file](example/example.pdf).
 
 **Note**: The user can still use any option compatible with the ```article``` class such as font size, etc.
+
+_This code is distributed under the [MIT Licence](LICENSE)_
 
 ## Options
 
