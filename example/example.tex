@@ -1,5 +1,6 @@
 
-\documentclass[12pt,palatino]{bppaper}
+\documentclass[12pt]{../bppaper}
+
 \usepackage{blindtext}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -7,17 +8,50 @@
 \title{Title of the project}
 \author{Author's name 1\\Institution 1 \and Author's name 2\\Institution 2}
 \date{\today}
-%\abstract{\blindtext}
+\abstract{\blindtext}
 \jel{jel1, jel2, jel3}
 \keywords{keyword1, keyword2, keyword3}
-%\thanks{\blindtext}
+\thanks{\blindtext}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{document}
-\maketitle
+\maketitle 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Options}
+
+\begin{itemize}
+    \item Fonts:
+    \begin{itemize}
+        \item \texttt{sans}
+        \item \texttt{serif}
+        \item \texttt{helvetica}
+        \item \texttt{palatino}
+    \end{itemize}
+    \item Other options:
+    \begin{itemize}
+        \item \texttt{narrow}: increases page margins
+        \item \texttt{color}: displays headers and other elements in blue, and references in green.
+        \begin{itemize}
+            \item You can define you won colors in the preambule with:
+            \item[] \texttt{$\backslash$definecolor$\{$main$\}\{$RGB$\}\{$a,b,c$\}$}\\
+            \texttt{$\backslash$definecolor$\{$colorref$\}\{$RGB$\}\{$a,b,c$\}$} 
+        \end{itemize}
+        \item \texttt{tikz}: loads the main tikz packages
+    \end{itemize}
+\end{itemize}
+
+\section{New commands}
+
+\begin{itemize}
+    \item \texttt{$\backslash$thanks$\{$some test$\}$} displays a footnote in the title page.
+    \item \texttt{$\backslash$vs}: equivalent to \texttt{$\backslash$vspace$\{$0.1cm$\}$}
+    \item \texttt{$\backslash$hs}: equivalent to \texttt{$\backslash$hspace$\{$0.1cm$\}$}
+    \item \texttt{$\backslash$so}: displays $\so$
+    \item \texttt{$\backslash$llave$\{$x = 0$\}$$\{$Lorem ipsum$\}$} displays $$\llave{x=0}{Lorem ipsum}$$
+\end{itemize}
 
 \section{First section's heading}
 
@@ -98,12 +132,12 @@ $$e^{\pi i} - 1 = 0$$
 \blindtext
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
+\clearpage
 \bibliography{biblio}
 \bibliographystyle{chicago}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
+\clearpage
 \section{First section in Appendix}
 
 \blindtext 

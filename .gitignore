@@ -6,7 +6,8 @@
 *.snm
 *.gz
 *.synctex*
-*.bbl
+*/*.bbl
 *.blg
 *.fdb*
 *.fls
+*.DS*

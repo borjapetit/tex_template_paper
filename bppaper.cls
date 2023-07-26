@@ -35,7 +35,7 @@
 \RequirePackage{booktabs}					% Nice lines for tables
 \RequirePackage{setspace}					% Redefine spacing
 \RequirePackage{stackengine}                % 
-\RequirePackage[normalem]{ulem}                       % Nice underline environment
+\RequirePackage[normalem]{ulem}             % Nice underline environment
 \RequirePackage{eurosym}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -44,13 +44,13 @@
 \RequirePackage{geometry}  % Define the size of document
 
 % Size of the document:
-\geometry{top=2cm, bottom=2.5cm, right=2cm, left=2cm, footskip=1cm, footnotesep=0.4cm}
+\geometry{top=2cm, bottom=2.5cm, right=2cm, left=2cm, footskip=1cm, footnotesep=0.5cm}
 \ifdefined\narrow
-	\geometry{top=3cm, bottom=3cm, right=3cm, left=3cm, footskip=1cm, footnotesep=0.4cm}
+	\geometry{top=3cm, bottom=3cm, right=3cm, left=3cm, footskip=1cm, footnotesep=0.5cm}
 \else\relax\fi
 
 % Line height
-\renewcommand{\baselinestretch}{1.5}
+\renewcommand{\baselinestretch}{1.4}
 
 % paragrpah spacing
 \setlength{\parindent}{20pt}
@@ -118,7 +118,6 @@
 \titleformat{\subsection}{\color{main}\large\bfseries}{\thesubsection}{0.5em}{}
 \titleformat{\subsubsection}{\color{main}\normalsize\bfseries}{\thesubsubsection}{0.5em}{}
 \titleformat{\paragraph}[runin]{\color{main}\normalsize\bfseries}{\theparagraph}{}{}
-
 
 % Spacing
 \titlespacing*{\section}{0pt}{0.5cm}{0.5cm}
@@ -209,21 +208,27 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % LIST ENVIROMENTS
 
-\setitemize{itemsep=1pt, topsep=5pt, leftmargin=20pt}
-\setenumerate{itemsep=1pt, topsep=5pt, leftmargin=20pt}
-\setdescription{itemsep=1pt, topsep=5pt, leftmargin=20pt}
+\setitemize[1]{itemsep=0pt, topsep=5pt, leftmargin=20pt}
+\setitemize[2]{itemsep=0pt, topsep=0pt, leftmargin=20pt}
+\setitemize[3]{itemsep=0pt, topsep=0pt, leftmargin=20pt}
 
-% itemize's labels
+\setenumerate[1]{itemsep=0pt, topsep=5pt, leftmargin=25pt, label=\arabic*.}
+\setenumerate[2]{itemsep=0pt, topsep=0pt, leftmargin=20pt, label=(\alph*)}
+\setenumerate[3]{itemsep=0pt, topsep=0pt, leftmargin=20pt, label=\roman*.}
+
+\setdescription[1]{itemsep=0pt, topsep=5pt, leftmargin=25pt}
+\setdescription[2]{itemsep=0pt,	topsep=0pt, leftmargin=20pt}
+\setdescription[3]{itemsep=0pt,	topsep=0pt, leftmargin=20pt}
+
 \def\labelitemi{\scriptsize\raise1.25pt\hbox{\color{main}$\bullet$}}
 \def\labelitemii{{\bfseries\color{main}$\circ$}}
 \def\labelitemiii{{\bfseries\color{main}$-$}}
-\def\labelitemiv{{\bfseries\color{main}$*$}}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % THEOREMS
 
 % Change the format of theorems and similars:
-\newtheoremstyle{mytheoremstyle}{0.4cm}{0.3cm}{\itshape}{0.0cm}{\bfseries\color{main}}{.}{.5em} {}  							% Theorem head spec (can be left empty, meaning "normal")
+\newtheoremstyle{mytheoremstyle}{0.4cm}{0.3cm}{\itshape}{0.0cm}{\bfseries\color{main}}{.}{.5em} {}  	% Theorem head spec (can be left empty, meaning "normal")
     
 % Set the theorem style to mine
 \theoremstyle{mytheoremstyle}
@@ -253,6 +258,7 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % USEFULL COMMANDS
+
 \RequirePackage{xparse}
 \NewDocumentCommand{\hs}{g}{ \IfNoValueTF{#1}{\hspace{0.1cm}}{\hspace{{#1}cm}}}
 \NewDocumentCommand{\vs}{g}{ \IfNoValueTF{#1}{\vspace{0.1cm}}{\vspace{{#1}cm}}}
