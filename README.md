@@ -6,7 +6,7 @@ This template is based on the ```article``` class. I redefine the title page, th
 \documentclass[sans,color,narrow]{bppaper}
 ```
 
-You can find an example here: [.tex file](https://github.com/borjapetit/tex_template_paper/example/example.tex) and [.pdf file](https://github.com/borjapetit/tex_template_paper/example/example.pdf).
+You can find an example here: [.tex file](example/example.tex) and [.pdf file](example/example.pdf).
 
 **Note**: The user can still use any option compatible with the ```article``` class such as font size, etc.
 
