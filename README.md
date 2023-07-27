@@ -11,7 +11,7 @@ You can find an example here: [.tex file](example/example.tex) and [.pdf file](e
 
 **Note**: The user can still use any option compatible with the ```article``` class such as font size, etc.
 
-_This code is distributed under the [MIT Licence](LICENSE)_
+_This code is distributed under the [MIT License](LICENSE)_
 
 ## Options
 
@@ -88,7 +88,7 @@ A "complete" preamble would be:
 - ```amssymb```, ```amsmath```, ```amsthm```: math expressions, symbols and theorems.
 - ```booktabs```: nice separation lines for tables.
 - ```setspace```: change the line spacing within the document.
-- ```ulem```: nicer underline enviroment.
+- ```ulem```: nicer underline environment.
 - ```stackengine```:  stack objects vertically (used for the ```\llave``` command).
 - ```natbib```: to manage .bib references (loads option ```authoryear```).
 - ```multirow```: merge multiple rows/columns in tables.
