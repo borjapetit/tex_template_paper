@@ -22,14 +22,20 @@ Font typefaces:
 - Palatino (option: ```palatino```)
 - Serif Pro (option: ```serif```).
 
+Colors (by default, headings appear in black and links in blue):
+
+- ```blue```: headings and captions appear in blue and links/references in green.
+- ```red```: headings and captions appear in red and links/references in green.
+- ```green```: headings and captions appear in green and links/references in blue.
+
+The user can define his/her own set of colors by including in the preambule:
+
+```latex
+\definecolor{main}{RGB}{000,100,000}      % headings
+\definecolor{colorref}{RGB}{000,000,200}  % links
+```
+
 Other options
-
-- Option ```color```: if this option is included, headings and captions will appear in blue and links/references in dark green. The user can also define his/her own colors by writing the following commands in the preamble:
-
-    ```LaTex
-    \definecolor{main}{RGB}{000,000,000}        % Headings and other elements
-    \definecolor{colorref}{RGB}{000,000,220}    % Links/references
-    ```
 
 - Option ```tikz```: the document loads the packages required to use the tikz environments. It automatically loads the libraries ```arrows```, ```positioning```, ```patterns```, ``decorations.pathreplacing`` and ```decorations.pathmorphing```.
 

@@ -13,11 +13,14 @@
 \DeclareOption{palatino}{\def\fontpala{1}}
 
 % colors
-\DeclareOption{color}{\def\withcolors{1}}
+\DeclareOption{blue}{\def\bluecolor{1}}
+\DeclareOption{red}{\def\redcolor{1}}
+\DeclareOption{green}{\def\greencolor{1}}
 
 % other options
 \DeclareOption{tikz}{\def\tikz{1}}
 
+% the other options
 \DeclareOption*{\PassOptionsToClass{\CurrentOption}{article}}
 \ProcessOptions\relax
 \LoadClass[a4paper]{article}
@@ -25,11 +28,10 @@
 \RequirePackage[utf8]{inputenc}
 \RequirePackage{enumitem}					% For formatting itemize and enumerate
 \RequirePackage{hyperref}					% For links and within-doc citations
-\RequirePackage[usenames,dvipsnames]{color}	% Define new colors
+\RequirePackage{xcolor}	% Define new colors
 \RequirePackage{titlesec}					% Customize section titles
 \RequirePackage{scrextend}					% Define footnotes' layout
 \RequirePackage[bottom]{footmisc}			% Make footnotes be located at the bottom.
-
 \RequirePackage{amssymb,amsmath,amsthm}		% Math expressions, symbols and theorems.
 \RequirePackage{graphicx}					% Include figures
 \RequirePackage{booktabs}					% Nice lines for tables
@@ -96,9 +98,19 @@
 \definecolor{colorref}{RGB}{000,000,220} 
 
 % Blue:
-\ifdefined\withcolors
+\ifdefined\bluecolor
 	\definecolor{main}{RGB}{000,000,180}
-	\definecolor{colorref}{RGB}{000,110,000}
+	\definecolor{colorref}{RGB}{000,140,000}
+\else\relax\fi
+% Red:
+\ifdefined\redcolor
+	\definecolor{main}{RGB}{160,000,000}
+	\definecolor{colorref}{RGB}{000,140,000}
+\else\relax\fi
+% Green:
+\ifdefined\greencolor
+	\definecolor{main}{RGB}{000,100,000}
+	\definecolor{colorref}{RGB}{000,000,200}
 \else\relax\fi
 
 \hypersetup{colorlinks=true,linkcolor=colorref,citecolor=colorref,urlcolor=colorref}
@@ -212,17 +224,17 @@
 \setitemize[2]{itemsep=0pt, topsep=0pt, leftmargin=20pt}
 \setitemize[3]{itemsep=0pt, topsep=0pt, leftmargin=20pt}
 
-\setenumerate[1]{itemsep=0pt, topsep=5pt, leftmargin=25pt, label=\arabic*.}
-\setenumerate[2]{itemsep=0pt, topsep=0pt, leftmargin=20pt, label=(\alph*)}
-\setenumerate[3]{itemsep=0pt, topsep=0pt, leftmargin=20pt, label=\roman*.}
+\setenumerate[1]{itemsep=1pt, topsep=5pt, leftmargin=25pt}
+\setenumerate[2]{itemsep=1pt, topsep=0pt, leftmargin=25pt}
+\setenumerate[3]{itemsep=1pt, topsep=0pt, leftmargin=25pt}
 
-\setdescription[1]{itemsep=0pt, topsep=5pt, leftmargin=25pt}
-\setdescription[2]{itemsep=0pt,	topsep=0pt, leftmargin=20pt}
-\setdescription[3]{itemsep=0pt,	topsep=0pt, leftmargin=20pt}
+\setdescription{itemsep=1pt, topsep=5pt, leftmargin=20pt}
 
+% itemize's labels
 \def\labelitemi{\scriptsize\raise1.25pt\hbox{\color{main}$\bullet$}}
 \def\labelitemii{{\bfseries\color{main}$\circ$}}
 \def\labelitemiii{{\bfseries\color{main}$-$}}
+\def\labelitemiv{{\bfseries\color{main}$*$}}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % THEOREMS
