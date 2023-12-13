@@ -274,7 +274,7 @@
 \RequirePackage{xparse}
 \NewDocumentCommand{\hs}{g}{ \IfNoValueTF{#1}{\hspace{0.1cm}}{\hspace{{#1}cm}}}
 \NewDocumentCommand{\vs}{g}{ \IfNoValueTF{#1}{\vspace{0.1cm}}{\vspace{{#1}cm}}}
-\newcommand{\so}{ \hs{0.5} \to \hs{0.5} }
+\newcommand{\so}{ \hspace{0.5cm}\to\hspace{0.5cm} }
 \newcommand{\llave}[2]{\underbrace{\addstackgap[4pt]{$#1$}}_{{\footnotesize\text{#2}}}}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
